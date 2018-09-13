@@ -1,4 +1,4 @@
-#ifndef DATACACHE_H_
+﻿#ifndef DATACACHE_H_
 #define DATACACHE_H_
 
 #include <QtCore>
@@ -13,10 +13,12 @@ public:
     static DataCache *instance();
 
 public:
-    Q_INVOKABLE void test();
-
     //获取城市的天气
     Q_INVOKABLE void getWeatherWithLocation(const QString& location, QVariant jsCallBack);
+
+private:
+    //缓存根路径
+    static  QString cacheRootDir();
 
 private:
     static DataCache *g_instance;
