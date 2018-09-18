@@ -6,9 +6,16 @@ Window {
     width: 640
     height: 480
     title: qsTr("Hello World")
+
+    RainCanvas{
+        anchors.fill: parent
+    }
+
     Component.onCompleted: {
-        DataCache.getWeatherWithLocation("德阳", function(suc, msg, data){
+        DataCache.getWeatherWithLocation("成都", function(suc, msg, data){
             console.log(suc, msg, data);
+            var jdata = JSON.parse(data);
+            console.log("DATA:", jdata["HeWeather6"]["update"]["loc"]);
         });
     }
 }

@@ -18,8 +18,28 @@ DataCache *DataCache::instance()
 
 void DataCache::getWeatherWithLocation(const QString &location, QVariant jsCallBack)
 {
+    QList<QJSValue> listValue;
+
+    QFile file(":/test.json");
+    file.open(QIODevice::ReadOnly);
+    listValue << QJSValue(true);
+    listValue << QJSValue("");
+    listValue << QJSValue(QString::fromUtf8(file.readAll()));
+
+    /*
+    listValue << QJSValue(false);
+    listValue << QJSValue(QString("Network error %1 with information: %2").arg(error).arg(data.data()));
+    listValue << QJSValue("");
+    */
+
+
+    if(jsCallBack.value<QJSValue>().isCallable()){
+        jsCallBack.value<QJSValue>().call(listValue);
+    }
+
+    return;
     QVariantMap params;
     params["key"] = kKey;
-    params["location"] =  location;
+    params["location"] = location;
     APIRequest::get(kWeatherURL, jsCallBack, params);
 }
