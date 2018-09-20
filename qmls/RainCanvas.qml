@@ -4,14 +4,11 @@ Canvas {
 
     id: canvas
 
-    anchors.fill: parent
-
     property var ctx
     //目前只有2d画笔
 
     // canvas画布的 背景颜色
-    property var backgroundColor: Qt.rgba(0, 0, 0, 1)
-
+    property var backgroundColor: Qt.rgba(0.4, 0.4, 0.4)
     // 保存小水珠的数组
     // 雨滴下落后散成小水珠，小水珠就是一些圆弧
     property var dropList: []
@@ -144,13 +141,11 @@ Canvas {
         running: true
 
         onTriggered: {
-            console.log("---------->")
             canvas.requestPaint()
         }
     }
     onPaint: {
 
-        console.log("ACCCCCC")
         ctx = canvas.getContext("2d")
         // 如果保存小水珠的数组有内容
         if (dropList.length > 0) {

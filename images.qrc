@@ -2,5 +2,12 @@
     <qresource prefix="/">
         <file>images/icon.png</file>
         <file>qmls/RainCanvas.qml</file>
+        <file>images/light.png</file>
+        <file>images/ring.png</file>
+        <file>qmls/Sun.qml</file>
+        <file>qmls/Overcast.qml</file>
+        <file>qmls/Snow.qml</file>
+        <file>qmls/Rain.qml</file>
+        <file>qmls/Cloud.qml</file>
     </qresource>
 </RCC>
