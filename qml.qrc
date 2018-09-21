@@ -1,5 +1,12 @@
 <RCC>
     <qresource prefix="/">
         <file>qmls/main.qml</file>
+        <file>qmls/Cloud.qml</file>
+        <file>qmls/Overcast.qml</file>
+        <file>qmls/Rain.qml</file>
+        <file>qmls/RainCanvas.qml</file>
+        <file>qmls/Snow.qml</file>
+        <file>qmls/Sun.qml</file>
+        <file>qmls/ApiResultResolve.js</file>
     </qresource>
 </RCC>

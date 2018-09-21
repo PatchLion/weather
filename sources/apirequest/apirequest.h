@@ -17,7 +17,7 @@ public:
     * const QVariantMap& params: 参数
     *QVariant jsCallBack: 回调的JS函数
     */
-    static void get(const QString& url, QVariant jsCallBack, const QVariantMap& params = QVariantMap());
+    static void get(const QString& url, QVariant jsCallBack, const QVariantMap& params = QVariantMap(), const QVariantMap& headers = QVariantMap());
 
 private:
     static QNetworkAccessManager *network();

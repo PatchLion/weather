@@ -26,7 +26,7 @@ QString variantToString(const QVariant& var)
 
     return "";
 }
-void APIRequest::get(const QString &url, QVariant jsCallBack, const QVariantMap &params)
+void APIRequest::get(const QString &url, QVariant jsCallBack, const QVariantMap &params, const QVariantMap& headers)
 {
     //构建
     QString tempUrl = url;
@@ -51,6 +51,10 @@ void APIRequest::get(const QString &url, QVariant jsCallBack, const QVariantMap 
 
 
     QNetworkRequest request(tempUrl);
+    Q_FOREACH(QString key, headers.keys())
+    {
+        request.setRawHeader(key.toUtf8(), headers[key].toByteArray());
+    }
 
 
     QNetworkReply* reply = APIRequest::network()->get(request);

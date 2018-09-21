@@ -1,5 +1,6 @@
-import QtQuick 2.9
+﻿import QtQuick 2.9
 import QtQuick.Window 2.2
+import "./ApiResultResolve.js" as ApiResolve
 
 Window {
     visible: true
@@ -7,39 +8,45 @@ Window {
     height: 480
     title: qsTr("Hello World")
 
+
+    /*
     Cloud{
         anchors.left: parent.left
         anchors.top: parent.top
         width: parent.width/2
         height: parent.height/2
     }
-
-    Rain{
+    */
+    Rain {
         anchors.right: parent.right
         anchors.top: parent.top
-        width: parent.width/2
-        height: parent.height/2
+        width: parent.width / 2
+        height: parent.height / 2
     }
 
     Component.onCompleted: {
-        DataCache.getWeatherWithLocation("成都", function(suc, msg, data){
-            console.log(suc, msg, data);
-            var jdata = JSON.parse(data);
-            console.log("DATA:", jdata["HeWeather6"]["update"]["loc"]);
-        });
+        DataCache.getSAWeather("成都", function (suc, msg, data) {
+            var results = ApiResolve.resolveAPIResponse(suc, msg, data, true)
+            console.log(results[0], results[1], results[2]);
+        })
+
+        DataCache.hotCities(function (suc, msg, data) {
+            var results = ApiResolve.resolveAPIResponse(suc, msg, data, true)
+            console.log(results[0], results[1], results[2]);
+        })
     }
 
-    Sun{
+    Sun {
         anchors.left: parent.left
         anchors.bottom: parent.bottom
-        width: parent.width/2
-        height: parent.height/2
+        width: parent.width / 2
+        height: parent.height / 2
     }
 
-    Snow{
+    Snow {
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-        width: parent.width/2
-        height: parent.height/2
+        width: parent.width / 2
+        height: parent.height / 2
     }
 }
