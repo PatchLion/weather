@@ -34,6 +34,12 @@ Window {
             var results = ApiResolve.resolveAPIResponse(suc, msg, data, true)
             console.log(results[0], results[1], results[2]);
         })
+
+
+        DataCache.cities("", function (suc, msg, data) {
+            var results = ApiResolve.resolveAPIResponse(suc, msg, data, true)
+            console.log(results[0], results[1], results[2]);
+        })
     }
 
     Sun {

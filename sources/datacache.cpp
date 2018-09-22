@@ -1,5 +1,6 @@
 ﻿#include "datacache.h"
 #include "apirequest.h"
+#include "dbopreator.h"
 
 static const QString kKey = "a1b8e04847844e99bfed52a308fab08f";
 static const QString kWeatherURL = "https://free-api.heweather.com/s6/weather/forecast"; //天气预报
@@ -13,14 +14,31 @@ static const QString kSAWeatherURL = "http://saweather.market.alicloudapi.com/ar
 
 DataCache::DataCache(QObject *parent)
     : QObject(parent)
+    , m_db(0)
 {
-
+    m_db = new DBOpreator(this);
 }
 
 DataCache *DataCache::instance()
 {
     static DataCache cache;
     return &cache;
+}
+
+void DataCache::cities(const QString &keyword, QVariant jsCallBack)
+{
+
+    const QString res = m_db->cities(QString::fromLocal8Bit("成都"));
+
+    QList<QJSValue> listValue;
+    listValue << QJSValue(true);
+    listValue << QJSValue("");
+    listValue << QJSValue(res);
+
+
+    if(jsCallBack.value<QJSValue>().isCallable()){
+        jsCallBack.value<QJSValue>().call(listValue);
+    }
 }
 
 void DataCache::hotCities(QVariant jsCallBack)

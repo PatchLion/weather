@@ -1,4 +1,4 @@
-QT += quick
+QT += quick sql
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
@@ -20,13 +20,15 @@ HEADERS += \
     sources/apirequest/apirequest.h \
     sources/apirequest/apirequestprivate.h \
     sources/fontsloader.h \
-    sources/datacache.h
+    sources/datacache.h \
+    sources/dbopreator.h
 
 SOURCES += main.cpp \
     sources/apirequest/apirequest.cpp \
     sources/apirequest/apirequestprivate.cpp \
     sources/fontsloader.cpp \
-    sources/datacache.cpp
+    sources/datacache.cpp \
+    sources/dbopreator.cpp
 
 win32{
     CONFIG -= flat

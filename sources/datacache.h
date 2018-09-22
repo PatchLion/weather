@@ -15,6 +15,7 @@
  * msg为失败后的描述小时
  * data为成功后返回的数据
  */
+class DBOpreator;
 class DataCache : public QObject
 {
     Q_OBJECT
@@ -25,6 +26,8 @@ public:
     static DataCache *instance();
 
 public:
+
+    Q_INVOKABLE void cities(const QString& keyword, QVariant jsCallBack);
 
     /*
      * 函数名: 热门城市
@@ -84,6 +87,7 @@ private:
 
 private:
     static DataCache *g_instance;
+    DBOpreator *m_db;
 };
 
 #endif
