@@ -30,6 +30,7 @@ class Weather(TableBase):
     __tablename__ = "Weather"
 
     id = Column(INTEGER(), primary_key=True, autoincrement=True) #id
+    areaid = Column(String())#- areaid 区域id
     day_weather = Column(String())#- day_weather 	白天天气
     night_weather = Column(String())#- night_weather 	晚上天气
     day_air_temperature = Column(String())#- day_air_temperature 	白天天气温度(摄氏度)
@@ -43,7 +44,7 @@ class Weather(TableBase):
     weekday = Column(INTEGER())#- weekday 	星期几
     day_weather_code = Column(String())#- day_weather_code 	白天的天气编码
     night_weather_code = Column(String())#- night_weather_code 	晚上的天气编码
-    air_press = Column(String())#- air_press 	大气压
+    #air_press = Column(String())#- air_press 	大气压
     jiangshui = Column(String())#- jiangshui 	降水概率
 
 #生活指数
