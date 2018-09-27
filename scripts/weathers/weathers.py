@@ -97,12 +97,41 @@ class Weathers(object):
         #读取地区id
         area_rs = DBInstance.records(Area, Area.namecn==location)
         if len(area_rs) > 0:
-            weather_rs = DBInstance.records(Weather, and_(Weather.day==key_date_string, Weather.areaid==area_rs[0].areaid))
+            weather_rs = DBInstance.records(Weather, and_(Weather.day>=key_date_string, Weather.areaid==area_rs[0].areaid))
+
+            weathers = {}
+            weathers["days"] = []
 
             for temp_w in weather_rs:
-                pass
+                temp = {}
+                temp["day"] = temp_w.day
+                temp["day_weather"] = temp_w.day_weather
+                temp["night_weather"] = temp_w.night_weather
+                temp["day_air_temperature"] = temp_w.day_air_temperature
+                temp["night_air_temperature"] = temp_w.night_air_temperature
+                temp["day_wind_direction"] = temp_w.day_wind_direction
+                temp["night_wind_direction"] = temp_w.night_wind_direction
+                temp["day_wind_power"] = temp_w.day_wind_power
+                temp["night_wind_power"] = temp_w.night_wind_power
+                temp["sun_begin_end"] = temp_w.sun_begin_end
+                temp["weekday"] = temp_w.weekday
+                temp["day_weather_code"] = temp_w.day_weather_code
+                temp["night_weather_code"] = temp_w.night_weather_code
+                temp["jiangshui"] = temp_w.jiangshui
+                #指数
+                temp["indexs"] = []
+                indexs = DBInstance.records(Index, Index.weather_id == temp_w.id)
+                for index in indexs:
+                    temp["indexs"].append({"type":index.type, "title":index.title, "desc":index.desc})
+                weathers["days"].append(temp)
 
-        return json.dumps({"code":-1, "message":"获取天气预报异常"}, ensure_ascii=False)
+
+            return self.build_standard_response(0, "", data=weathers)
+
+        return self.build_standard_response(-1, "获取天气预报异常")
+
+    def build_standard_response(self, code, message, data=None):
+        return json.dumps({"code":code, "message":message, "data":data}, ensure_ascii=False)
 
     #获取最后更新日期
     def last_update_date(self, location):
@@ -122,13 +151,3 @@ class Weathers(object):
             return DBInstance.updateRecords(LastUpdateDate, LastUpdateDate.type==location, {LastUpdateDate. date:date_string})
         else:
             return DBInstance.addRecord(LastUpdateDate(type=location, date=date_string))
-
-
-
-w = Weathers()
-#print(w.cities("成"))
-#print(datetime.date.today())
-#print(w.last_update_date())
-#print(w.set_last_udpate_date("成都"))
-#print(w.last_update_date("成都"))
-print(w.weather_with_location("成都"))
