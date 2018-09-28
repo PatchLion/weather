@@ -25,21 +25,11 @@ Window {
     }
 
     Component.onCompleted: {
-        DataCache.getSAWeather("成都", function (suc, msg, data) {
+        DataCache.getLocalServerWeather("成都", function (suc, msg, data) {
             var results = ApiResolve.resolveAPIResponse(suc, msg, data, true)
             console.log(results[0], results[1], results[2]);
         })
 
-        DataCache.hotCities(function (suc, msg, data) {
-            var results = ApiResolve.resolveAPIResponse(suc, msg, data, true)
-            console.log(results[0], results[1], results[2]);
-        })
-
-
-        DataCache.cities("", function (suc, msg, data) {
-            var results = ApiResolve.resolveAPIResponse(suc, msg, data, true)
-            console.log(results[0], results[1], results[2]);
-        })
     }
 
     Sun {

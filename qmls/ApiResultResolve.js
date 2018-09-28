@@ -42,9 +42,9 @@ function resolveStandardData(ori_data){
     if(ori_data){
         var obj = runFuncWithUseTime(JSON.parse, "JSON.parse", ori_data);
 
-        console.log("=================>", obj["HeWeather6"], obj["HeWeather6"]["status"]);
-        var msg = obj.HeWeather6.status;
-        var data = obj.HeWeather6;
+        //console.log("=================>", obj["HeWeather6"], obj["HeWeather6"]["status"]);
+        var msg = obj.message;
+        var data = obj.data;
 
         if(msg){
             result = [false, msg];

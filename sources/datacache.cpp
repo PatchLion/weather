@@ -12,6 +12,9 @@ static const QString kHotCitiesURL = "https://search.heweather.com/top"; //热�
 //易源数据-天气预报
 static const QString kSAWeatherURL = "http://saweather.market.alicloudapi.com/area-to-weather";
 
+//
+static const QString kLocalServer = "http://0.0.0.0:5050/weather";
+
 DataCache::DataCache(QObject *parent)
     : QObject(parent)
     , m_db(0)
@@ -111,4 +114,11 @@ void DataCache::getSAWeather(const QString &location, QVariant jsCallBack)
     headers["Authorization"] = "APPCODE 377ab35f6c624993b54e8c75345d23ba";
     headers["Content-Type"] = "application/json; charset=utf-8";
     APIRequest::get(kSAWeatherURL, jsCallBack, params, headers);
+}
+
+void DataCache::getLocalServerWeather(const QString &location, QVariant jsCallBack)
+{
+    QVariantMap params;
+    params["location"] = location;
+    APIRequest::get(kLocalServer, jsCallBack, params);
 }

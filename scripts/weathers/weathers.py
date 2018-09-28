@@ -30,6 +30,7 @@ class Weathers(object):
         return json.dumps(cities_tree,ensure_ascii=False)
 
     def request_network_api(self,location):
+        print("++++++++++++++", location)
         headers = {"Authorization": "APPCODE 377ab35f6c624993b54e8c75345d23ba", "Content-Type": "application/json; charset=utf-8"}
         res = requests.get(SAWeatherURL+"?area="+location +"&needMoreDay=1&needIndex=1", headers=headers)
         weather_data = json.loads(res.content, encoding="utf-8")
@@ -88,6 +89,7 @@ class Weathers(object):
     def weather_with_location(self, location):
         date_string = datetime.date.today().strftime("%Y-%m-%d")
         if date_string != self.last_update_date(location):
+            #print("===", date_string, self.last_update_date(location), date_string == self.last_update_date(location))
             #需要拉取远程API数据
             self.request_network_api(location)
 
@@ -140,7 +142,7 @@ class Weathers(object):
         rs = DBInstance.records(LastUpdateDate, LastUpdateDate.type==location)
         if len(rs) == 0:
             return datetime.date.fromtimestamp(0)
-        return datetime.datetime.strptime(rs[0].date,'%Y-%m-%d').date()
+        return str(datetime.datetime.strptime(rs[0].date,'%Y-%m-%d').date())
 
     #设置最后更新日期
     def set_last_udpate_date(self, location):

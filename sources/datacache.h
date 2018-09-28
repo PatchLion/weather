@@ -81,6 +81,9 @@ public:
      * QVariant jsCallBack: JS回调函数，参考上面 jsCallBack定义
      */
     Q_INVOKABLE void getSAWeather(const QString& location, QVariant jsCallBack);
+
+
+    Q_INVOKABLE void getLocalServerWeather(const QString& location, QVariant jsCallBack);
 private:
     //缓存根路径
     static  QString cacheRootDir();
