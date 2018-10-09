@@ -20,12 +20,40 @@ DataCache::DataCache(QObject *parent)
     , m_db(0)
 {
     m_db = new DBOpreator(this);
+
+    QFile file("qrc:/cities.json");
+    if(file.open(QIODevice::ReadOnly))
+    {
+        QJsonParseError error;
+        QJsonDocument doc = QJsonDocument::fromJson(file.readAll(), &error);
+
+        if(error.error == QJsonParseError::NoError)
+        {
+            QJsonObject root = doc.object();
+            Q_FOREACH(QString key, root.keys())
+            {
+                m_cityImages[key] = root.value(key).toString();
+                qDebug() << key << " = " << root.value(key).toString();
+            }
+        }
+    }
 }
 
 DataCache *DataCache::instance()
 {
     static DataCache cache;
     return &cache;
+}
+
+QStringList DataCache::allCity()
+{
+    return m_cityImages.keys();
+}
+
+QString DataCache::cityImage(const QString &cityName)
+{
+    if(!m_cityImages.contains(cityName)) return "";
+    return m_cityImages[cityName];
 }
 
 void DataCache::cities(const QString &keyword, QVariant jsCallBack)

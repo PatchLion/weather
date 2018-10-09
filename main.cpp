@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextProperty("DataCache", DataCache::instance());
-    engine.load(QUrl(QStringLiteral("qrc:/qmls/main.qml")));
+    engine.load(QUrl(QStringLiteral("qrc:/qmls/MainWindows.qml")));
 
     if (engine.rootObjects().isEmpty())
         return -1;

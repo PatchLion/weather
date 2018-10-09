@@ -26,6 +26,9 @@ public:
     static DataCache *instance();
 
 public:
+    Q_INVOKABLE QStringList allCity();
+    Q_INVOKABLE QString cityImage(const QString& cityName);
+
 
     Q_INVOKABLE void cities(const QString& keyword, QVariant jsCallBack);
 
@@ -91,6 +94,7 @@ private:
 private:
     static DataCache *g_instance;
     DBOpreator *m_db;
+    QMap<QString, QString> m_cityImages;
 };
 
 #endif

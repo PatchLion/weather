@@ -8,5 +8,6 @@
         <file>qmls/Snow.qml</file>
         <file>qmls/Sun.qml</file>
         <file>qmls/ApiResultResolve.js</file>
+        <file>qmls/MainWindows.qml</file>
     </qresource>
 </RCC>

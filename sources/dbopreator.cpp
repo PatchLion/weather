@@ -1,7 +1,7 @@
 #include "dbopreator.h"
 #include <QDebug>
-#include <QSqlError>
-#include <QSqlQuery>
+//#include <QSqlError>
+//#include <QSqlQuery>
 
 DBOpreator::DBOpreator(QObject *parent)
     : QObject(parent)
@@ -15,6 +15,7 @@ DBOpreator::~DBOpreator()
 
 QString DBOpreator::cities(const QString &keyword)
 {
+    /*
     QSqlDatabase database = QSqlDatabase::addDatabase("QSQLITE");
     database.setDatabaseName("/Users/patchlion/projects/weather/weathers.db");
 
@@ -44,5 +45,6 @@ QString DBOpreator::cities(const QString &keyword)
             qDebug()<<id << " " << name;
         }
     }
-
+*/
+    return "";
 }

@@ -1,7 +1,41 @@
-﻿<RCC>
+<RCC>
     <qresource prefix="/">
         <file>images/icon.png</file>
         <file>images/light.png</file>
         <file>images/ring.png</file>
+        <file>images/cities/aomen.jpg</file>
+        <file>images/cities/beijing.jpg</file>
+        <file>images/cities/changchun.jpg</file>
+        <file>images/cities/changha.jpg</file>
+        <file>images/cities/chengdu.jpg</file>
+        <file>images/cities/chongqing.jpg</file>
+        <file>images/cities/dalian.jpg</file>
+        <file>images/cities/dongguan.jpg</file>
+        <file>images/cities/fuzhou.jpg</file>
+        <file>images/cities/guangzhou.jpg</file>
+        <file>images/cities/haerbin.jpg</file>
+        <file>images/cities/hangzhou.jpg</file>
+        <file>images/cities/hefei.jpg</file>
+        <file>images/cities/jinan.jpg</file>
+        <file>images/cities/kunming.jpg</file>
+        <file>images/cities/lanzhou.jpg</file>
+        <file>images/cities/nanchang.jpg</file>
+        <file>images/cities/ningbo.jpg</file>
+        <file>images/cities/qingdao.jpg</file>
+        <file>images/cities/shanghai.jpg</file>
+        <file>images/cities/shenyang.jpg</file>
+        <file>images/cities/shenzhen.jpg</file>
+        <file>images/cities/shenzhenwan.jpg</file>
+        <file>images/cities/shijiazhuang.jpg</file>
+        <file>images/cities/taiyaun.jpg</file>
+        <file>images/cities/tianjin.jpg</file>
+        <file>images/cities/wuhan.jpg</file>
+        <file>images/cities/xian.jpg</file>
+        <file>images/cities/xianggang.jpg</file>
+        <file>images/cities/zhengzhou.jpg</file>
+        <file>images/cities/zhuhai.jpg</file>
+        <file>images/cities/suzhou.png</file>
+        <file>images/cities/taibei.png</file>
+        <file>images/cities/xiamen.png</file>
     </qresource>
 </RCC>
