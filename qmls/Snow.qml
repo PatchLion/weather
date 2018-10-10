@@ -1,7 +1,7 @@
 import QtQuick 2.0
 
-Rectangle{
-    color: Qt.lighter("#596977")
+Item{
+    //color: Qt.lighter("#596977")
     Canvas {
 
         id: canvas

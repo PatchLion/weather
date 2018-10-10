@@ -21,7 +21,7 @@ DataCache::DataCache(QObject *parent)
 {
     m_db = new DBOpreator(this);
 
-    QFile file("qrc:/cities.json");
+    QFile file(":/cities.json");
     if(file.open(QIODevice::ReadOnly))
     {
         QJsonParseError error;

@@ -3,6 +3,7 @@
         <file>images/icon.png</file>
         <file>images/light.png</file>
         <file>images/ring.png</file>
+        <file>images/cities/xiamen.png</file>
         <file>images/cities/aomen.jpg</file>
         <file>images/cities/beijing.jpg</file>
         <file>images/cities/changchun.jpg</file>
@@ -36,6 +37,5 @@
         <file>images/cities/zhuhai.jpg</file>
         <file>images/cities/suzhou.png</file>
         <file>images/cities/taibei.png</file>
-        <file>images/cities/xiamen.png</file>
     </qresource>
 </RCC>

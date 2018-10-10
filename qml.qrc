@@ -9,5 +9,9 @@
         <file>qmls/Sun.qml</file>
         <file>qmls/ApiResultResolve.js</file>
         <file>qmls/MainWindows.qml</file>
+        <file>qmls/WeatherPanel.qml</file>
+        <file>qmls/BackGroundPanel.qml</file>
+        <file>qmls/SmallWeatherItem.qml</file>
+        <file>qmls/MainWeatherItem.qml</file>
     </qresource>
 </RCC>

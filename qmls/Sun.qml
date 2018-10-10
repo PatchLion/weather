@@ -1,7 +1,7 @@
 import QtQuick 2.0
 
-Rectangle{
-    color: "#468fd0"
+Item{
+    //color: "#468fd0"
     Image {
         anchors.fill: parent
         source: "qrc:/images/light.png"
@@ -13,4 +13,5 @@ Rectangle{
         source: "qrc:/images/ring.png"
         fillMode: Image.PreserveAspectFit
     }
+    opacity: 0.8
 }
