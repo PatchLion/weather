@@ -1,4 +1,4 @@
-import QtQuick 2.0
+﻿import QtQuick 2.0
 
 BackGroundPanel {
     id: root_item
@@ -15,7 +15,7 @@ BackGroundPanel {
             Text{
                 id: date_item
                 color: Qt.rgba(1, 1, 1, 1)
-                font.pointSize: 18
+                font.pointSize: 15
                 font.family: "微软雅黑"
                 horizontalAlignment: Text.AlignHCenter
                 width:parent.width

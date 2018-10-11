@@ -37,5 +37,43 @@
         <file>images/cities/zhuhai.jpg</file>
         <file>images/cities/suzhou.png</file>
         <file>images/cities/taibei.png</file>
+        <file>images/weathers/cloudy1.png</file>
+        <file>images/weathers/cloudy1_night.png</file>
+        <file>images/weathers/cloudy2.png</file>
+        <file>images/weathers/cloudy2_night.png</file>
+        <file>images/weathers/cloudy3.png</file>
+        <file>images/weathers/cloudy3_night.png</file>
+        <file>images/weathers/cloudy4.png</file>
+        <file>images/weathers/cloudy4_night.png</file>
+        <file>images/weathers/cloudy5.png</file>
+        <file>images/weathers/fog.png</file>
+        <file>images/weathers/fog_night.png</file>
+        <file>images/weathers/hail.png</file>
+        <file>images/weathers/light_rain.png</file>
+        <file>images/weathers/mist.png</file>
+        <file>images/weathers/mist_night.png</file>
+        <file>images/weathers/overcast.png</file>
+        <file>images/weathers/readme.html</file>
+        <file>images/weathers/shower1.png</file>
+        <file>images/weathers/shower1_night.png</file>
+        <file>images/weathers/shower2.png</file>
+        <file>images/weathers/shower2_night.png</file>
+        <file>images/weathers/shower3.png</file>
+        <file>images/weathers/sleet.png</file>
+        <file>images/weathers/snow1.png</file>
+        <file>images/weathers/snow1_night.png</file>
+        <file>images/weathers/snow2.png</file>
+        <file>images/weathers/snow2_night.png</file>
+        <file>images/weathers/snow3.png</file>
+        <file>images/weathers/snow3_night.png</file>
+        <file>images/weathers/snow4.png</file>
+        <file>images/weathers/snow5.png</file>
+        <file>images/weathers/sunny.png</file>
+        <file>images/weathers/sunny_night.png</file>
+        <file>images/weathers/tstorm1.png</file>
+        <file>images/weathers/tstorm1_night.png</file>
+        <file>images/weathers/tstorm2.png</file>
+        <file>images/weathers/tstorm2_night.png</file>
+        <file>images/weathers/tstorm3.png</file>
     </qresource>
 </RCC>

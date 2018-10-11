@@ -1,4 +1,4 @@
-import QtQuick 2.0
+﻿import QtQuick 2.0
 import QtQuick.Window 2.2
 import QtGraphicalEffects 1.0
 
@@ -61,12 +61,26 @@ Window {
         }
     }
 
+
     WeatherPanel{
+        id: weather_panel_item
         height: 160
         anchors.left: parent.left
         anchors.bottom: parent.bottom
         anchors.right: parent.right
-    }
 
+        isShowLeftIndexOnState: !index_type_switch_item.on
+    }
+    SwitchButton{
+        id: index_type_switch_item
+        anchors.right: weather_panel_item.right
+        anchors.rightMargin: 10
+        anchors.bottom: weather_panel_item.top
+        anchors.bottomMargin: 5
+        width: 50
+        barHeight: 40
+        onTitle: "天气指数"
+        offTitle: "生活指数"
+    }
 
 }

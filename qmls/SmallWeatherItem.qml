@@ -1,4 +1,4 @@
-import QtQuick 2.0
+﻿import QtQuick 2.0
 
 BackGroundPanel{
     property alias icon: icon_item.source
@@ -16,7 +16,7 @@ BackGroundPanel{
     Text{
         id: title_item
         color: Qt.rgba(1, 1, 1, 1)
-        font.pointSize: 15
+        font.pointSize: 12
         font.family: "微软雅黑"
         anchors.top: icon_item.bottom
         anchors.topMargin: 5

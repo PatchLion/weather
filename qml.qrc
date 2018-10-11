@@ -13,5 +13,6 @@
         <file>qmls/BackGroundPanel.qml</file>
         <file>qmls/SmallWeatherItem.qml</file>
         <file>qmls/MainWeatherItem.qml</file>
+        <file>qmls/SwitchButton.qml</file>
     </qresource>
 </RCC>
