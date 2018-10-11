@@ -30,8 +30,8 @@ Item {
 
         Rectangle{
             color: Qt.rgba(1, 1, 1, 1)
-            width: parent.height - 10
-            height: parent.height - 10
+            width: parent.height - 5
+            height: parent.height - 5
             radius: width/2
             y: parent.height/2 - height/2
             x: on ? 5 : (parent.width - width - 5)

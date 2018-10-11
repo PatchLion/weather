@@ -9,8 +9,9 @@ Window {
     height: 600
     minimumWidth: 1024
     title: ""
-    property string cityName: "成都"
+    property alias cityName: weather_panel_item.cityName
     property var current: default_weather
+
     Image{
         source: DataCache.cityImage(cityName)
         anchors.fill: parent
@@ -68,8 +69,38 @@ Window {
         anchors.left: parent.left
         anchors.bottom: parent.bottom
         anchors.right: parent.right
+        dayOffset: 0
 
+        cityName: "成都"
         isShowLeftIndexOnState: !index_type_switch_item.on
+
+        onWeatherCodeChanged: {
+            if(weatherCode >=3 && weatherCode <= 12)
+            {
+                //下雨
+                showWeather(rain);
+            }
+            else if(weatherCode === 0)
+            {
+                //晴天
+                showWeather(sun);
+            }
+            else if(weatherCode === 2)
+            {
+                //阴
+                showWeather();
+            }
+            else if(weatherCode >=13 && weatherCode <= 17)
+            {
+                //下雪
+                showWeather(snow);
+            }
+            else
+            {
+                //默认
+                showWeather(default_weather);
+            }
+        }
     }
     SwitchButton{
         id: index_type_switch_item
@@ -77,10 +108,39 @@ Window {
         anchors.rightMargin: 10
         anchors.bottom: weather_panel_item.top
         anchors.bottomMargin: 5
-        width: 50
-        barHeight: 40
+        width: 40
+        barHeight: 30
         onTitle: "天气指数"
         offTitle: "生活指数"
     }
 
+    Image{
+        source: "qrc:/images/location.png"
+        width: 30
+        height: 36
+        fillMode: Image.PreserveAspectFit
+        anchors.left: parent.left
+        anchors.leftMargin: 30
+        anchors.top: parent.top
+        anchors.topMargin: 15
+
+        MouseArea{
+            anchors.fill: parent
+            cursorShape: Qt.PointingHandCursor
+
+        }
+
+        Text
+        {
+            anchors.top: parent.bottom
+            anchors.topMargin: 1
+            anchors.horizontalCenter: parent.horizontalCenter
+
+            horizontalAlignment: Text.AlignHCenter
+            text: root_window.cityName
+            color: Qt.rgba(1, 1, 1, 1)
+            font.pointSize: 15
+            font.family: "微软雅黑"
+        }
+    }
 }

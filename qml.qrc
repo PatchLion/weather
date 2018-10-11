@@ -14,5 +14,6 @@
         <file>qmls/SmallWeatherItem.qml</file>
         <file>qmls/MainWeatherItem.qml</file>
         <file>qmls/SwitchButton.qml</file>
+        <file>qmls/ArrowButton.qml</file>
     </qresource>
 </RCC>

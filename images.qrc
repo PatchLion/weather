@@ -75,5 +75,91 @@
         <file>images/weathers/tstorm2.png</file>
         <file>images/weathers/tstorm2_night.png</file>
         <file>images/weathers/tstorm3.png</file>
+        <file>images/cities/1.jpg</file>
+        <file>images/cities/3.jpg</file>
+        <file>images/cities/4.jpg</file>
+        <file>images/cities/5.jpg</file>
+        <file>images/cities/6.jpg</file>
+        <file>images/cities/7.jpg</file>
+        <file>images/cities/8.jpg</file>
+        <file>images/cities/11.jpg</file>
+        <file>images/cities/12.jpg</file>
+        <file>images/cities/13.jpg</file>
+        <file>images/cities/14.jpg</file>
+        <file>images/cities/15.jpg</file>
+        <file>images/cities/beijing-001.jpg</file>
+        <file>images/cities/beijing-002 .jpg</file>
+        <file>images/cities/beijing-002.jpg</file>
+        <file>images/cities/beijing-003.jpg</file>
+        <file>images/cities/changchun-001.jpg</file>
+        <file>images/cities/changsha-001 .jpg</file>
+        <file>images/cities/chengdu .jpg</file>
+        <file>images/cities/chengdu-001 .jpg</file>
+        <file>images/cities/chongqing-001.jpg</file>
+        <file>images/cities/chongqing-002 .jpg</file>
+        <file>images/cities/dalian-001.jpg</file>
+        <file>images/cities/dongguan-001 .jpg</file>
+        <file>images/cities/dongguan-001.jpg</file>
+        <file>images/cities/fuzhou-001.jpg</file>
+        <file>images/cities/guangzhou-001.jpg</file>
+        <file>images/cities/haerbin-001.jpg</file>
+        <file>images/cities/haerbin-002.jpg</file>
+        <file>images/cities/hangzhouxihu .jpg</file>
+        <file>images/cities/jinan-001.jpg</file>
+        <file>images/cities/kunming-001.jpg</file>
+        <file>images/cities/lanzhou-001.jpg</file>
+        <file>images/cities/nanchang-001 .jpg</file>
+        <file>images/cities/nanjing.jpg</file>
+        <file>images/cities/ningbo-001.jpg</file>
+        <file>images/cities/qingdao-001 .jpg</file>
+        <file>images/cities/qingdao-002 .jpg</file>
+        <file>images/cities/qinghai .jpg</file>
+        <file>images/cities/shanghai .jpg</file>
+        <file>images/cities/shanghai-001 .jpg</file>
+        <file>images/cities/shanghai-001.jpg</file>
+        <file>images/cities/shanghai-002 .jpg</file>
+        <file>images/cities/shenyang .jpg</file>
+        <file>images/cities/shenyang-001.jpg</file>
+        <file>images/cities/shenyang-002.jpg</file>
+        <file>images/cities/shenzhen .jpg</file>
+        <file>images/cities/shenzhen-001.jpg</file>
+        <file>images/cities/shenzhenwan-002.jpg</file>
+        <file>images/cities/shenzhenwan-003.jpg</file>
+        <file>images/cities/shijiazhuang-001.jpg</file>
+        <file>images/cities/suzhou .jpg</file>
+        <file>images/cities/suzhou-001.jpg</file>
+        <file>images/cities/suzhou-002.jpg</file>
+        <file>images/cities/suzhou-003 .jpg</file>
+        <file>images/cities/suzhou.jpg</file>
+        <file>images/cities/taibei-001 .jpg</file>
+        <file>images/cities/taibei.jpg</file>
+        <file>images/cities/taiyuan-001.jpg</file>
+        <file>images/cities/tianjin-002.jpg</file>
+        <file>images/cities/tianjinnankai .jpg</file>
+        <file>images/cities/tianjinzhiyan .jpg</file>
+        <file>images/cities/wuhan-001.jpg</file>
+        <file>images/cities/wuhan-002 .jpg</file>
+        <file>images/cities/xiamen-001.jpg</file>
+        <file>images/cities/xiamen-002.jpg</file>
+        <file>images/cities/xiamen.jpg</file>
+        <file>images/cities/xianggang .jpg</file>
+        <file>images/cities/xianggang-001 .jpg</file>
+        <file>images/cities/zhengzhou-001.jpg</file>
+        <file>images/cities/zhengzhou-002.jpg</file>
+        <file>images/cities/zhuhai .jpg</file>
+        <file>images/cities/zhuhai-001  .jpg</file>
+        <file>images/cities/zhuhai-001 .jpg</file>
+        <file>images/cities/zhuhai-001.jpg</file>
+        <file>images/cities/2.png</file>
+        <file>images/cities/10.png</file>
+        <file>images/cities/aomen-001.png</file>
+        <file>images/cities/chongqing-002.png</file>
+        <file>images/cities/fuzhou-001.png</file>
+        <file>images/cities/fuzhou-002.png</file>
+        <file>images/cities/guangzhou-002.png</file>
+        <file>images/cities/xiamen-002.png</file>
+        <file>images/location.png</file>
+        <file>images/left.png</file>
+        <file>images/right.png</file>
     </qresource>
 </RCC>

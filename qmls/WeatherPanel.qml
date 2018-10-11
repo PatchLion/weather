@@ -1,9 +1,38 @@
 ﻿import QtQuick 2.0
+import "./ApiResultResolve.js" as ApiResolve
 
 Item {
     id: root_item
 
     property bool isShowLeftIndexOnState: false //展示生活指数
+    property alias dayOffset: main_weather_panel.dayOffset
+    property string cityName: ""
+    property alias weatherCode: main_weather_panel.weatherCode
+
+    function updateWeather(day){
+
+        if(weather_infos.length > day)
+        {
+            var w = weather_infos[day];
+            jsl_panel.value = w.jiangshui;
+            zdwd_panel.value = w.night_air_temperature+"℃";
+            zgwd_panel.value = w.day_air_temperature+"℃";
+            fl_panel.value = w.day_wind_power;
+            main_weather_panel.weather = w.day_weather;
+            main_weather_panel.weatherCode = parseInt(w.day_weather_code);
+        }
+    }
+
+    onCityNameChanged: {
+        DataCache.getLocalServerWeather(cityName, function(suc, msg, data){
+            var results = ApiResolve.resolveAPIResponse(suc, msg, data, true);
+            root_item.weather_infos = results[1].days;
+            main_weather_panel.dayOffset = 0;
+            updateWeather(main_weather_panel.dayOffset);
+        });
+    }
+
+    property var weather_infos
 
     Item{
         id: center_item
@@ -20,9 +49,39 @@ Item {
             anchors.bottom: parent.bottom
             width: 300
             height: parent.height
-            date: "2018年10月11日"
-            week: "星期二"
             weather: "晴"
+
+            onDayOffsetChanged: {
+                root_item.updateWeather(dayOffset);
+            }
+
+            onWeatherCodeChanged: {
+                if(weatherCode >=3 && weatherCode <= 12)
+                {
+                    //下雨
+                    weatherIcon = "qrc:/images/weathers/shower3.png";
+                }
+                else if(weatherCode === 0)
+                {
+                    //晴天
+                    weatherIcon = "qrc:/images/weathers/sunny.png";
+                }
+                else if(weatherCode === 2)
+                {
+                    //阴
+                    weatherIcon = "qrc:/images/weathers/mist_night.png";
+                }
+                else if(weatherCode >=13 && weatherCode <= 17)
+                {
+                    //下雪
+                    weatherIcon = "qrc:/images/weathers/snow5.png";
+                }
+                else
+                {
+                    //默认
+                    weatherIcon = "qrc:/images/weathers/mist.png";
+                }
+            }
         }
 
         //天气指数
@@ -42,8 +101,8 @@ Item {
                 anchors.verticalCenter: parent.verticalCenter
                 width: center_item.smallPanelWidth
                 height: parent.height
-                title: "降水量"
-                value: "300ml"
+                title: "降雨概率"
+                value: ""
             }
             //最低温度
             SmallWeatherItem{
@@ -54,7 +113,7 @@ Item {
                 width: center_item.smallPanelWidth
                 height: parent.height
                 title: "最低温度"
-                value: "300ml"
+                value: ""
             }
             //最高温度
             SmallWeatherItem{
@@ -65,7 +124,7 @@ Item {
                 width: center_item.smallPanelWidth
                 height: parent.height
                 title: "最高温度"
-                value: "300ml"
+                value: ""
             }
 
             //风力
@@ -77,7 +136,7 @@ Item {
                 width: center_item.smallPanelWidth
                 height: parent.height
                 title: "风力"
-                value: "300ml"
+                value: ""
             }
 
 
@@ -90,7 +149,7 @@ Item {
                 width: center_item.smallPanelWidth
                 height: parent.height
                 title: "空气湿度"
-                value: "300ml"
+                value: ""
             }
 
 
@@ -103,7 +162,7 @@ Item {
                 width: center_item.smallPanelWidth
                 height: parent.height
                 title: "能见度"
-                value: "300ml"
+                value: ""
             }
         }
 
@@ -124,7 +183,7 @@ Item {
                 width: center_item.smallPanelWidth
                 height: parent.height
                 title: "出行指数"
-                value: "300ml"
+                value: ""
             }
             //洗车指数
             SmallWeatherItem{
@@ -135,7 +194,7 @@ Item {
                 width: center_item.smallPanelWidth
                 height: parent.height
                 title: "洗车指数"
-                value: "300ml"
+                value: ""
             }
             //穿衣指数
             SmallWeatherItem{
@@ -146,7 +205,7 @@ Item {
                 width: center_item.smallPanelWidth
                 height: parent.height
                 title: "穿衣指数"
-                value: "300ml"
+                value: ""
             }
 
             //空气质量
@@ -158,7 +217,7 @@ Item {
                 width: center_item.smallPanelWidth
                 height: parent.height
                 title: "空气质量"
-                value: "300ml"
+                value: ""
             }
 
 
