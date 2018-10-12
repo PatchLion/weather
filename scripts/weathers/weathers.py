@@ -121,10 +121,10 @@ class Weathers(object):
                 temp["night_weather_code"] = temp_w.night_weather_code
                 temp["jiangshui"] = temp_w.jiangshui
                 #指数
-                temp["indexs"] = []
+
                 indexs = DBInstance.records(Index, Index.weather_id == temp_w.id)
                 for index in indexs:
-                    temp["indexs"].append({"type":index.type, "title":index.title, "desc":index.desc})
+                    temp[index.type]={"title":index.title, "desc":index.desc}
                 weathers["days"].append(temp)
 
 

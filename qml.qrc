@@ -15,5 +15,8 @@
         <file>qmls/MainWeatherItem.qml</file>
         <file>qmls/SwitchButton.qml</file>
         <file>qmls/ArrowButton.qml</file>
+        <file>qmls/GlobalViewConfig.js</file>
+        <file>qmls/GlobalView.qml</file>
+        <file>qmls/CityListPanel.qml</file>
     </qresource>
 </RCC>

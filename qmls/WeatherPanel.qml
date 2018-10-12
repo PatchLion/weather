@@ -18,6 +18,13 @@ Item {
             zdwd_panel.value = w.night_air_temperature+"℃";
             zgwd_panel.value = w.day_air_temperature+"℃";
             fl_panel.value = w.day_wind_power;
+            ywfl_panel.value = w.night_wind_power;
+
+            xczs_panel.value = w.wash_car.title;
+            kqzl_panel.value = w.aqi.title;
+            cyzs_panel.value = w.clothes.title;
+            sszs_panel.value = w.travel.title;
+            cxzs_panel.value = w.yh.title;
             main_weather_panel.weather = w.day_weather;
             main_weather_panel.weatherCode = parseInt(w.day_weather_code);
         }
@@ -39,7 +46,7 @@ Item {
         anchors.fill: parent
         anchors.margins: 1
         property int spacing: 1
-        property int smallPanelWidth: (parent.width-main_weather_panel.width-6*center_item.spacing)/6
+        property int smallPanelWidth: (parent.width-main_weather_panel.width-6*center_item.spacing)/5
 
 
         //主面板
@@ -127,7 +134,7 @@ Item {
                 value: ""
             }
 
-            //风力
+            //白天风力
             SmallWeatherItem{
                 id: fl_panel
                 anchors.left: zgwd_panel.right
@@ -135,35 +142,23 @@ Item {
                 anchors.verticalCenter: parent.verticalCenter
                 width: center_item.smallPanelWidth
                 height: parent.height
-                title: "风力"
+                title: "白天风力"
                 value: ""
             }
 
 
-            //空气湿度
+            //夜晚风力
             SmallWeatherItem{
-                id: kqsd_panel
+                id: ywfl_panel
                 anchors.left: fl_panel.right
                 anchors.leftMargin: center_item.spacing
                 anchors.verticalCenter: parent.verticalCenter
                 width: center_item.smallPanelWidth
                 height: parent.height
-                title: "空气湿度"
+                title: "夜晚风力"
                 value: ""
             }
 
-
-            //能见度
-            SmallWeatherItem{
-                id: njd_panel
-                anchors.left: kqsd_panel.right
-                anchors.leftMargin: center_item.spacing
-                anchors.verticalCenter: parent.verticalCenter
-                width: center_item.smallPanelWidth
-                height: parent.height
-                title: "能见度"
-                value: ""
-            }
         }
 
         //生活指数
@@ -185,21 +180,22 @@ Item {
                 title: "出行指数"
                 value: ""
             }
-            //洗车指数
+            //舒适指数
             SmallWeatherItem{
-                id: xczs_panel
+                id: sszs_panel
+
                 anchors.left: cxzs_panel.right
                 anchors.leftMargin: center_item.spacing
                 anchors.verticalCenter: parent.verticalCenter
                 width: center_item.smallPanelWidth
                 height: parent.height
-                title: "洗车指数"
+                title: "舒适指数"
                 value: ""
             }
             //穿衣指数
             SmallWeatherItem{
                 id: cyzs_panel
-                anchors.left: xczs_panel.right
+                anchors.left: sszs_panel.right
                 anchors.leftMargin: center_item.spacing
                 anchors.verticalCenter: parent.verticalCenter
                 width: center_item.smallPanelWidth
@@ -220,6 +216,18 @@ Item {
                 value: ""
             }
 
+            //洗车指数
+            SmallWeatherItem{
+                id: xczs_panel
+
+                anchors.left: kqzl_panel.right
+                anchors.leftMargin: center_item.spacing
+                anchors.verticalCenter: parent.verticalCenter
+                width: center_item.smallPanelWidth
+                height: parent.height
+                title: "空气质量"
+                value: ""
+            }
 
         }
     }

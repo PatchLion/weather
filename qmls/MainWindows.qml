@@ -1,6 +1,7 @@
 ﻿import QtQuick 2.0
 import QtQuick.Window 2.2
 import QtGraphicalEffects 1.0
+import "GlobalViewConfig.js" as GlobalV
 
 Window {
     id: root_window
@@ -114,33 +115,69 @@ Window {
         offTitle: "生活指数"
     }
 
-    Image{
-        source: "qrc:/images/location.png"
-        width: 30
-        height: 36
-        fillMode: Image.PreserveAspectFit
+    BackGroundPanel{
         anchors.left: parent.left
         anchors.leftMargin: 30
         anchors.top: parent.top
         anchors.topMargin: 15
+        width: 54
+        height: 48
 
-        MouseArea{
+        color:Qt.rgba(1, 1, 1, 0.0)
+        Image{
+            id: local_icon
+            source: "qrc:/images/location_city.png"
+            fillMode: Image.PreserveAspectFit
+
+
             anchors.fill: parent
-            cursorShape: Qt.PointingHandCursor
+            property var temp_obj
 
+            MouseArea{
+                id: mouseArea
+                anchors.fill: parent
+                cursorShape: Qt.PointingHandCursor
+
+                onClicked: {
+                    local_icon.temp_obj = GlobalV.showComponentInGlobal(city_list_panel_component, GlobalV.Mode_View, GlobalV.itemPosToGlobal(mouseArea), GlobalV.Pos_GlobalCenter);
+                }
+            }
+
+            Text
+            {
+                anchors.top: parent.bottom
+                anchors.topMargin: 1
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                horizontalAlignment: Text.AlignHCenter
+                text: root_window.cityName
+                color: Qt.rgba(1, 1, 1, 0.7)
+                font.pointSize: 17
+                font.family: "微软雅黑"
+            }
+
+
+            Component{
+                id: city_list_panel_component
+                CityListPanel{
+                    width: 500
+                    height: 400
+                    visible: false
+
+                    onCityChanged: {
+                        root_window.cityName = name;
+
+                        GlobalV.hideCurrentGlobalItem(local_icon.temp_obj);
+                    }
+                }
+            }
         }
+    }
 
-        Text
-        {
-            anchors.top: parent.bottom
-            anchors.topMargin: 1
-            anchors.horizontalCenter: parent.horizontalCenter
-
-            horizontalAlignment: Text.AlignHCenter
-            text: root_window.cityName
-            color: Qt.rgba(1, 1, 1, 1)
-            font.pointSize: 15
-            font.family: "微软雅黑"
+    GlobalView{
+        anchors.fill: parent
+        Component.onCompleted: {
+            GlobalV.GlobalView = this;
         }
     }
 }
